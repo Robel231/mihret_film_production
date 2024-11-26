@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero bg-dark text-white text-center py-5" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Welcome to Mihret Film Production</h1>
+        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="100">Crafting Cinematic Experiences and Stunning Photoshoots</p>
+        <a href="{{ url_for('main.portfolio') }}" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Explore Our Portfolio</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about py-5">
+    <div class="container text-center">
+        <h2 class="mb-4" data-aos="fade-up">About Us</h2>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">
+            At Mihret Film Production, we specialize in producing captivating films and stunning photoshoots that tell stories and evoke emotions. 
+            Our dedicated team is passionate about turning your visions into reality.
+        </p>
+        <a href="{{ url_for('main.about') }}" class="btn btn-outline-dark mt-3" data-aos="fade-up" data-aos-delay="200">Learn More</a>
+    </div>
+</section>
+
+<!-- Featured Portfolio Section -->
+<section class="portfolio py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Our Featured Work</h2>
+        <div class="row">
+            <!-- Portfolio Item 1 -->
+            <div class="col-md-4 mb-4 portfolio-item" data-aos="fade-up">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/portfolio1.jpg') }}" class="card-img-top" alt="Portfolio 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Cinematic Masterpiece</h5>
+                        <p class="card-text">An unforgettable story brought to life through stunning visuals.</p>
+                        <a href="{{ url_for('main.portfolio') }}" class="btn btn-primary">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Item 2 -->
+            <div class="col-md-4 mb-4 portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/portfolio2.jpg') }}" class="card-img-top" alt="Portfolio 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Elegant Photoshoot</h5>
+                        <p class="card-text">Timeless photography capturing moments that last forever.</p>
+                        <a href="{{ url_for('main.portfolio') }}" class="btn btn-primary">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="col-md-4 mb-4 portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/portfolio3.jpg') }}" class="card-img-top" alt="Portfolio 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Inspirational Storytelling</h5>
+                        <p class="card-text">Powerful narratives captured through the lens of creativity.</p>
+                        <a href="{{ url_for('main.portfolio') }}" class="btn btn-primary">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="contact-cta text-center py-5 bg-dark text-white">
+    <div class="container">
+        <h2 data-aos="fade-up">Let's Create Something Beautiful Together</h2>
+        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="100">Contact us to discuss your next project or collaboration.</p>
+        <a href="{{ url_for('main.contact') }}" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+    </div>
+</section>
+
+<!-- Testimonials Section (Optional for Future) -->
+<section class="testimonials py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">What Our Clients Say</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card">
+                    <p class="lead">"Mihret Film Production turned our vision into a breathtaking reality. Their attention to detail and creativity is unmatched!"</p>
+                    <p class="client-name">- Client Name, Company</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <p class="lead">"Working with Mihret was an incredible experience. We couldn’t be happier with the final results!"</p>
+                    <p class="client-name">- Another Client, Organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

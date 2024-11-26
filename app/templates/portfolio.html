@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Portfolio Page Header -->
+<section class="portfolio-header text-center py-5 bg-dark text-white">
+    <div class="container">
+        <h1 class="display-5" data-aos="fade-up">Our Portfolio</h1>
+        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="100">
+            A showcase of our finest works in films and photo shoots.
+        </p>
+    </div>
+</section>
+
+<!-- Portfolio Filter Section -->
+<section class="portfolio-filter py-4 bg-light">
+    <div class="container text-center">
+        <button class="btn btn-outline-dark mx-2" onclick="filterPortfolio('all')" data-aos="fade-up">All</button>
+        <button class="btn btn-outline-dark mx-2" onclick="filterPortfolio('film')" data-aos="fade-up" data-aos-delay="100">Films</button>
+        <button class="btn btn-outline-dark mx-2" onclick="filterPortfolio('photo')" data-aos="fade-up" data-aos-delay="200">Photo Shoots</button>
+    </div>
+</section>
+
+<!-- Portfolio Gallery -->
+<section class="portfolio-gallery py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Film Item -->
+            <div class="col-md-4 portfolio-item film" data-aos="fade-up">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/film1.jpg') }}" class="card-img-top" alt="Film 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Cinematic Adventure</h5>
+                        <p class="card-text">A breathtaking journey through storytelling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Shoot Item -->
+            <div class="col-md-4 portfolio-item photo" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/photo1.jpg') }}" class="card-img-top" alt="Photo 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Elegant Portrait</h5>
+                        <p class="card-text">Timeless elegance captured in every frame.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Portfolio Items -->
+            <div class="col-md-4 portfolio-item film" data-aos="fade-up" data-aos-delay="200">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/film2.jpg') }}" class="card-img-top" alt="Film 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Dramatic Vision</h5>
+                        <p class="card-text">A creative exploration of emotions and ideas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 portfolio-item photo" data-aos="fade-up" data-aos-delay="300">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/photo2.jpg') }}" class="card-img-top" alt="Photo 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Serene Landscape</h5>
+                        <p class="card-text">Nature's beauty, frozen in time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more items as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Filtering -->
+<script>
+    function filterPortfolio(category) {
+        const items = document.querySelectorAll('.portfolio-item');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+</script>
+{% endblock %}
