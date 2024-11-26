@@ -38,3 +38,31 @@ class ContactSubmission(db.Model):
 
     def __repr__(self):
         return f'<ContactSubmission {self.name}>'
+
+# Photo Model (for storing photos in your admin)
+class Photo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    file_path = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.Text)
+
+    def __repr__(self):
+        return f'<Photo {self.title}>'
+
+# Video Model (for storing videos in your admin)
+class Video(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    file_path = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return f'<Video {self.title}>'
+
+# Text Content Model (for storing text content like blog posts, descriptions)
+class TextContent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return f'<TextContent {self.title}>'
