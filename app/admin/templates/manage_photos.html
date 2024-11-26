@@ -1,0 +1,25 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Manage Photos</h1>
+<a href="{{ url_for('admin.add_photo') }}" class="btn btn-primary">Add Photo</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for photo in photos %}
+        <tr>
+            <td>{{ photo.title }}</td>
+            <td>
+                <form method="POST" action="{{ url_for('admin.delete_photo', id=photo.id) }}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
